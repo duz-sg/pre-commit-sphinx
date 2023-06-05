@@ -11,7 +11,7 @@ Builds documentation using sphinx, returns PASSED to pre-config if the documenta
 Use in your `.pre-commit-config.yaml` file like:
 ```yaml
   - repo: https://github.com/thclark/pre-commit-sphinx
-    rev: v0.0.5
+    rev: v0.0.6
     hooks:
       - id: build-docs
         args: ['--cache-dir', 'docs/doctrees', '--html-dir', 'docs/html', '--source-dir', 'docs/source']
