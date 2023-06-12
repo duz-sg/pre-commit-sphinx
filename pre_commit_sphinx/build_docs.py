@@ -2,6 +2,7 @@ import argparse
 import os
 from typing import Optional
 from typing import Sequence
+import logging
 
 
 def requires_build(filenames: Sequence[str], always_build: bool) -> bool:
@@ -17,6 +18,7 @@ def build(cache_dir: str, html_dir: str, src_dir: str):
     """Invokes sphinx-build to build the docs"""
 
     # Run Sphinx to build the documentation
+    logging.info(f"sphinx-apidoc -o {src_dir} {src_dir} -f; make clean; make html")
     ret = os.system(
         f"sphinx-apidoc -o {src_dir} {src_dir} -f; make clean; make html"
     )
